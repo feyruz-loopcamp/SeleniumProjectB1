@@ -13,6 +13,11 @@ public class SeleniumTest {
         // create instance of driver
         WebDriver driver = new ChromeDriver();
 
+        // maximize
+        driver.manage().window().maximize();
+        //driver.manage().window().fullscreen();
+
+
 
        driver.get("https://www.etsy.com/");
 
@@ -25,8 +30,25 @@ public class SeleniumTest {
 
         // title methods
 
-        String myWebtitle = driver.getTitle();
-        System.out.println("myWebtitle = " + myWebtitle);
+        String currentTitle = driver.getTitle();
+        System.out.println("myWebtitle = " + currentTitle);
+
+        // lets navigate to amazon
+        driver.get("https://amazon.com");
+
+        currentTitle = driver.getTitle();
+        System.out.println("myWebtitle = " + currentTitle);
+
+        // get the url of the page
+        String currentUrl = driver.getCurrentUrl();
+        System.out.println("currentUrl = " + currentUrl);
+
+        // close browser - current open one
+       driver.close();
+
+       // quit driver
+        driver.quit();
+
 
 
     }
