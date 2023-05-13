@@ -42,6 +42,7 @@ public class T2_findElements {
         for (WebElement linkText : allLinks) {
             if(!linkText.getText().equals("")) {
                 System.out.println("linkText.getText() = " + linkText.getText());
+                System.out.println("linkText.getAttribute(\"href\") = " + linkText.getAttribute("href"));
             }
         }
 
