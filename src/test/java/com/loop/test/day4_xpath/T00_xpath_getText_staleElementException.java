@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class T00_xpath_getText {
+public class T00_xpath_getText_staleElementException {
 
     /*
     1. Open Chrome browser
@@ -45,7 +45,7 @@ public class T00_xpath_getText {
 
         sendlButton.click();
 
-        Thread.sleep(2000);
+        Thread.sleep(3000);
 
         WebElement successMessage = driver.findElement(By.xpath("//span[@class='body-1']"));
 
