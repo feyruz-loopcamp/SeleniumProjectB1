@@ -45,18 +45,27 @@ public class T3_multiple_dropdown {
         List<WebElement> options = new ArrayList<>();
         options = dropdown.getOptions();
 
-        dropdown.selectByValue("volvo");
-        Thread.sleep(3000);
-        dropdown.selectByIndex(1);
-        Thread.sleep(3000);
-        dropdown.selectByVisibleText("Opel");
-        Thread.sleep(3000);
+
+//        dropdown.selectByValue("volvo");
+//        Thread.sleep(3000);
+//        dropdown.selectByIndex(1);
+//        Thread.sleep(3000);
+//        dropdown.selectByVisibleText("Opel");
+//        Thread.sleep(3000);
 
 
 //        for (WebElement each : options) {
 //            each.click();
 //            System.out.println(each.getText());
 //        }
+
+        options.forEach(option -> {
+            option.click();
+            System.out.println("option = " + option.getText());
+        });
+
+        dropdown.deselectAll();
+
 
 
 
