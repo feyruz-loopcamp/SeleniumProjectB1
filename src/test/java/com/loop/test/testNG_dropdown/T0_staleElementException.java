@@ -1,4 +1,4 @@
-package com.loop.test.testNG_stale_element;
+package com.loop.test.testNG_dropdown;
 
 import com.loop.test.Utilities.WebDriverFactory;
 import org.openqa.selenium.By;
@@ -6,10 +6,9 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import javax.swing.*;
 import java.time.Duration;
 
-public class T0_StaleElementException {
+public class T0_staleElementException {
 
     public static void main(String[] args) throws InterruptedException {
 
