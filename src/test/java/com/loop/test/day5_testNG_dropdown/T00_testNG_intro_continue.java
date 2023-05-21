@@ -1,4 +1,4 @@
-package com.loop.test.testNG_dropdown;
+package com.loop.test.day5_testNG_dropdown;
 
 import org.testng.Assert;
 import org.testng.annotations.*;

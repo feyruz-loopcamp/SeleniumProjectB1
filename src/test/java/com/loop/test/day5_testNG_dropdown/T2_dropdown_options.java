@@ -1,4 +1,4 @@
-package com.loop.test.testNG_dropdown;
+package com.loop.test.day5_testNG_dropdown;
 
 import com.loop.test.Utilities.WebDriverFactory;
 import org.openqa.selenium.By;
