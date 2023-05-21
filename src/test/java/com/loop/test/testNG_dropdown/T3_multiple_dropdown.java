@@ -60,7 +60,9 @@ public class T3_multiple_dropdown {
 //        }
 
         options.forEach(option -> {
-            option.click();
+            if(option.getText().equalsIgnoreCase("Opel")) {
+                option.click();
+            }
             System.out.println("option = " + option.getText());
         });
 
