@@ -14,7 +14,7 @@ import java.time.Duration;
 
 import static org.testng.Assert.assertEquals;
 
-public class AlertsPractice {
+public class T1_alerts {
 
     /*
     Information alert practice
