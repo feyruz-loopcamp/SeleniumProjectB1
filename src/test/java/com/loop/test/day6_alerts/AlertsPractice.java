@@ -6,10 +6,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+
+import static org.testng.Assert.assertEquals;
 
 public class AlertsPractice {
 
@@ -55,7 +58,7 @@ public class AlertsPractice {
         WebElement successMessageInformationAlert = driver.findElement(By.xpath("//p[contains(text(),'successfully')]"));
         actual = successMessageInformationAlert.getText();
         String expected = "You successfully clicked an alert";
-        Assert.assertEquals(expected,actual);
+        assertEquals(expected,actual);
 
     }
 
@@ -70,14 +73,14 @@ public class AlertsPractice {
         WebElement successMessageInformationAlert = driver.findElement(By.xpath("//p[contains(text(),'You clicked: Ok') or contains(text(),'You clicked: Cancel') or contains(text(),'You entered')]"));
         actual = successMessageInformationAlert.getText();
         String expected1 = "You clicked: Ok";
-        Assert.assertEquals(expected1,actual);
+        assertEquals(expected1,actual);
 
         clickForJSConfirm.click();
         Thread.sleep(3000);
         alert.dismiss();
         actual = successMessageInformationAlert.getText();
         String expected2 = "You clicked: Cancel";
-        Assert.assertEquals(expected2,actual);
+        assertEquals(expected2,actual);
 
 
 
@@ -99,10 +102,11 @@ public class AlertsPractice {
         String expected3 = "Loop Academy";
 
         Assert.assertTrue(actual.contains(expected3));
+    }
 
-
-
-
+    @AfterMethod
+    public void tearDownMethod(){
+        driver.close();
     }
 
 
