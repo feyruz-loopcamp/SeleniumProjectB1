@@ -1,5 +1,6 @@
 package com.loop.test.day7_windows;
 
+import com.loop.test.Utilities.BrowserUtils;
 import com.loop.test.base.TestBase;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
@@ -33,18 +34,21 @@ public class T2_windows_handle extends TestBase {
         ((JavascriptExecutor) driver).executeScript("window.open('http://etsy.com','_blank');");
         ((JavascriptExecutor) driver).executeScript("window.open('http://facebook.com','_blank');");
 
-        Set<String> windowHandles = driver.getWindowHandles();
+//        Set<String> windowHandles = driver.getWindowHandles();
+//
+//        for (String window : windowHandles){
+//            driver.switchTo().window(window);
+//            System.out.println(driver.getCurrentUrl());
+//            if (driver.getCurrentUrl().toLowerCase().contains("etsy")){
+//
+//                break;
+//            }
+//        }
+//
+//        assertTrue(driver.getTitle().toLowerCase().contains("etsy"));
 
-        for (String window : windowHandles){
-            driver.switchTo().window(window);
-            System.out.println(driver.getCurrentUrl());
-            if (driver.getCurrentUrl().toLowerCase().contains("etsy")){
-
-                break;
-            }
-        }
-
-        assertTrue(driver.getTitle().toLowerCase().contains("etsy"));
+       // BrowserUtils.switchWindowAndVerify(driver, "amazon.com", "amazon");
+        BrowserUtils.switchToWindow(driver, "Facebook");
 
     }
 
