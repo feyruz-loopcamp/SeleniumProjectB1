@@ -40,11 +40,6 @@ public class T2_iframes extends TestBase {
         driver.switchTo().parentFrame();
 
 
-
-
-
-
-
     }
 
 }
