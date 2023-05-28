@@ -17,26 +17,23 @@ public class DocuportUtilites {
             case "client":
                 username.sendKeys(DocuportConstans.USERNAME_CLINET);
                 password.sendKeys(DocuportConstans.PASSWORD);
-                loginButton.click();
                 break;
             case "supervisor":
                 username.sendKeys(DocuportConstans.USERNAME_SUPERVISOR);
                 password.sendKeys(DocuportConstans.PASSWORD);
-                loginButton.click();
                 break;
             case "advisor":
                 username.sendKeys(DocuportConstans.USERNAME_ADVISOR);
                 password.sendKeys(DocuportConstans.PASSWORD);
-                loginButton.click();
                 break;
             case "employee":
                 username.sendKeys(DocuportConstans.USERNAME_EMPLOYEE);
                 password.sendKeys(DocuportConstans.PASSWORD);
-                loginButton.click();
                 break;
             default:
                 throw new InputMismatchException("There is not such a user: " + role);
         }
+        loginButton.click();
     }
 
     public static void logOut(WebDriver driver){

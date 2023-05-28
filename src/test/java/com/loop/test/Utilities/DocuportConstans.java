@@ -11,6 +11,14 @@ public class DocuportConstans {
     public static final String PASSWORD_ADVISOR = "Group1";
 
     public static final String EXPECTED_ERROR_MESSAGE_PASSWORD = "Please enter your password";
+    public static final String ROLE_FIELD = "role";
+    public static final String PHONE_FIELD = "phone number";
+    public static final String FULLNAME_FIELD = "full name";
+    public static final String ADVISOR_FIELD = "advisor";
+    public static final String USERNAME_FIELD = "user name";
+    public static final String EMAIL_FOR_ALEX_DE_SOUZA = "alex.de.souza@gmail.com";
+
+
 
 
 }

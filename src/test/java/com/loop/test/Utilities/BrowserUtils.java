@@ -16,7 +16,7 @@ public class BrowserUtils {
      * @return void, assertion is implemented
      * @author nadir
      */
-    public static void switchWindowAndVerify(WebDriver driver, String expectedUrl, String expecteTitle){
+    public static void switchWindowAndVerify(WebDriver driver, String expectedUrl, String expectedTitle){
         Set<String> windowHandles = driver.getWindowHandles();
         for (String window : windowHandles){
             driver.switchTo().window(window);
@@ -24,7 +24,7 @@ public class BrowserUtils {
                 break;
             }
         }
-        assertTrue(driver.getTitle().toLowerCase().contains(expecteTitle));
+        assertTrue(driver.getTitle().toLowerCase().contains(expectedTitle));
     }
 
     /**
