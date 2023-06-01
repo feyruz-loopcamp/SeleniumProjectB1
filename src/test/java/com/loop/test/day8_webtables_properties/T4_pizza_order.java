@@ -1,4 +1,4 @@
-package com.loop.test.day7_windows;
+package com.loop.test.day8_webtables_properties;
 
 import com.loop.test.Utilities.PizzaOrderWebTableUtils;
 import com.loop.test.base.TestBase;
