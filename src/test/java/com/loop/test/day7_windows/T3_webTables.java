@@ -34,6 +34,12 @@ public class T3_webTables extends TestBase {
         assertEquals(DocuportWebTableUtils.returnAnyField(driver, "alex.de.souza@gmail", "role"), "Client");
         assertEquals(DocuportWebTableUtils.returnAnyField(driver, "alex.de.souza@gmail", "advisor"), "Batch1 Group1");
 
+        assertEquals(DocuportWebTableUtils.returnAnyField(driver, "b1g1_supervisor@gmail.com", "full name"), "Batch1 Group1");
+        assertEquals(DocuportWebTableUtils.returnAnyField(driver, "b1g1_supervisor@gmail.com", "user name"), "b1g1_supervisor@gmail.com");
+        assertEquals(DocuportWebTableUtils.returnAnyField(driver, "b1g1_supervisor@gmail.com", "phone number"), "0000000000");
+        assertEquals(DocuportWebTableUtils.returnAnyField(driver, "b1g1_supervisor@gmail.com", "role"), "Supervisor");
+        assertEquals(DocuportWebTableUtils.returnAnyField(driver, "b1g1_supervisor@gmail.com", "advisor"), "");
+
 
 
 
