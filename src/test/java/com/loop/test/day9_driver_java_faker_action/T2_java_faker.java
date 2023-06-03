@@ -1,4 +1,4 @@
-package com.loop.test.day9_driver_java_faker;
+package com.loop.test.day9_driver_java_faker_action;
 
 import com.github.javafaker.Faker;
 import org.testng.annotations.Test;

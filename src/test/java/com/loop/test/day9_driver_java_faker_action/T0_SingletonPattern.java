@@ -1,4 +1,4 @@
-package com.loop.test.day9_driver_java_faker;
+package com.loop.test.day9_driver_java_faker_action;
 
 public class T0_SingletonPattern {
 
