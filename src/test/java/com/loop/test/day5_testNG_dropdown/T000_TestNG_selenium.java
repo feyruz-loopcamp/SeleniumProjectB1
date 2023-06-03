@@ -2,6 +2,7 @@ package com.loop.test.day5_testNG_dropdown;
 
 import com.loop.test.Utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -30,6 +31,7 @@ public class T000_TestNG_selenium {
         driver.get("https://www.google.com/");
         actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle, "Google");
+        System.out.println("((RemoteWebDriver) Driver.getDriver()).getSessionId() = " + ((RemoteWebDriver) driver).getSessionId());
     }
 
     @Test
@@ -37,6 +39,7 @@ public class T000_TestNG_selenium {
         driver.get("https://beta.docuport.app");
         actualTitle = driver.getTitle();
         Assert.assertTrue(actualTitle.contains("Docuport"));
+        System.out.println("((RemoteWebDriver) Driver.getDriver()).getSessionId() = " + ((RemoteWebDriver) driver).getSessionId());
     }
 
 
