@@ -45,6 +45,8 @@ public class T2_upload_test {
 
         assertEquals(successMessage.getText(), expected);
 
+        Driver.closeDriver();
+
 
 
     }
