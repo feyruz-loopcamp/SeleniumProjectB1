@@ -4,6 +4,8 @@ import com.loop.pages.LoopPractice;
 import com.loop.test.Utilities.Driver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class T3_pom_actions {
@@ -36,6 +38,7 @@ public class T3_pom_actions {
      */
 
 
+    /*
 
     @Test
     public void drag_small_circle(){
@@ -54,6 +57,36 @@ public class T3_pom_actions {
         Assert.assertEquals(page.bigCircle.getText(), "Drop here.");
 
     }
+
+     */
+
+    LoopPractice page;
+    Actions actions;
+
+    @BeforeMethod
+    public void setUp() {
+        page = new LoopPractice();
+        actions = new Actions(Driver.getDriver());
+        Driver.getDriver().get("https://loopcamp.vercel.app/drag-and-drop-circles.html");
+    }
+
+    @Test
+    public void drag_small_circle() {
+        Assert.assertEquals(page.bigCircle.getText(), "Drag the small circle here.");
+    }
+
+    @Test
+    public void drop_here() {
+        actions.moveToElement(page.smallcircile).clickAndHold().moveByOffset(1000, 0).pause(3000).perform();
+        Assert.assertEquals(page.bigCircle.getText(), "Drop here.");
+
+    }
+
+    @AfterClass
+    public void tearDown(){
+        Driver.getDriver().quit();
+    }
+
 
 }
 

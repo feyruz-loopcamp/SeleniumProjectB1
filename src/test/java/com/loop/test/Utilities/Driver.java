@@ -49,7 +49,7 @@ public class Driver {
                     throw new IllegalArgumentException("Unsupported browser type: " + browserType );
             }
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
         return driver;
     }
