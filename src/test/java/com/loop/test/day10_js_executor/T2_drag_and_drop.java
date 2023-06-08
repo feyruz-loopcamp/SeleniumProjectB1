@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class T2_drag_and_drop {
 
@@ -41,6 +42,7 @@ public class T2_drag_and_drop {
         String actual = great.getText();
         String expected = "You did great!";
         assertEquals(actual, expected);
+        assertTrue(great.isDisplayed());
 
     }
 }
