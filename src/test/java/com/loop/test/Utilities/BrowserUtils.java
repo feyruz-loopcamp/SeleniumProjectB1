@@ -7,8 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.junit.Assert;
 
 import java.time.Duration;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 import static org.testng.Assert.assertTrue;
@@ -21,7 +23,7 @@ public class BrowserUtils {
      * @param expectedUrl, it uses contains method
      * @param expectedUrl, it uses contains method
      * @return void, assertion is implemented
-     * @author nadir
+     * @author nsh
      */
     public static void switchWindowAndVerify(WebDriver driver, String expectedUrl, String expectedTitle){
         Set<String> windowHandles = driver.getWindowHandles();
@@ -38,7 +40,7 @@ public class BrowserUtils {
      * @param driver
      * @param expectedTitle
      * returns void, assertion is implemented
-     * @authot nadir
+     * @author nsh
      */
     public static void verifyTitle(WebDriver driver, String expectedTitle){
         assertTrue(driver.getTitle().contains(expectedTitle));
@@ -63,7 +65,7 @@ public class BrowserUtils {
      *
      * @param nameOfthePage from loop practice page
      * once you on the page call it
-     * @nsh
+     * @author nsh
      */
     public static void loopLinkClick(String nameOfthePage){
         WebElement element = Driver.getDriver().findElement(By.xpath("//a[.='" + nameOfthePage + "']"));
@@ -75,7 +77,7 @@ public class BrowserUtils {
     /**
      * Moves the mouse to given element
      * @param element on which to hover
-     * @nsh
+     * @author nsh
      */
     public static void hover(WebElement element) {
         Actions actions = new Actions(Driver.getDriver());
@@ -85,7 +87,7 @@ public class BrowserUtils {
     /**
      * Clicks on an element using JavaScript
      * @param element
-     * @nsh
+     * @author nsh
      */
     public static void clickWithJS(WebElement element) {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
@@ -95,7 +97,7 @@ public class BrowserUtils {
     /**
      * Scrolls down to an element using JavaScript
      * @param element
-     * @nsh
+     * @author nsh
      */
     public static void scrollToElement(WebElement element) {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
@@ -104,7 +106,7 @@ public class BrowserUtils {
     /**
      * Performs double click action on an element
      * @param element
-     * @snh
+     * @author nsh
      */
     public static void doubleClick(WebElement element) {
         new Actions(Driver.getDriver()).doubleClick(element).build().perform();
@@ -115,7 +117,7 @@ public class BrowserUtils {
      * @param element
      * @param timeToWaitInSec
      * @return
-     * @nsh
+     * @author nsh
      */
     public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeToWaitInSec));
@@ -127,7 +129,7 @@ public class BrowserUtils {
      * @param element
      * @param timeToWaitInSec
      * @return
-     * @nsh
+     * @author nsh
      */
     public static void waitForInVisibility(WebElement element, int timeToWaitInSec) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeToWaitInSec));
@@ -139,11 +141,39 @@ public class BrowserUtils {
      * @param element
      * @param timeout
      * @return
-     * @nsh
+     * @author nsh
      */
     public static WebElement waitForClickable(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    /**
+     * performs a pause
+     * @param seconds
+     * @author nsh
+     */
+    public static void justWait(int seconds){
+        try{
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e){
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Validate whether the element is displayed on page
+     *
+     * @param element
+     * @throws AssertionError if the element is not found or not displayed
+     */
+    public static void verifyElementDisplayed(WebElement element) {
+        try {
+            Assert.assertTrue("Element not visible: " + element, element.isDisplayed());
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+            Assert.fail("Element not found: " + element);
+        }
     }
 
 

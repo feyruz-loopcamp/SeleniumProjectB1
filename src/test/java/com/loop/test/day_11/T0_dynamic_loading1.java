@@ -51,12 +51,13 @@ public class T0_dynamic_loading1 {
         page.userName.sendKeys("tomsmith");
         page.password.sendKeys("incorrectpassword");
         page.submitButton.click();
+        BrowserUtils.clickWithJS(page.submitButton);
         Assert.assertTrue(page.errorMessage.isDisplayed());
     }
 
     @AfterClass
     public void tearDown(){
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
 
 }
